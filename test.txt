@@ -1,0 +1,18 @@
+Republic of Korea
+대한민국 만세
+우리나라 만세
+viva Korea
+Welcome to Korea
+
+asdfasdfasdfasdf
+asdfasdfasdfasdf
+asdfasdfasdfasdf
+
+// 여기는 main() method
+public static void main(String args[]) {
+
+	System.out.println("대한민국만세");
+
+	}
+
+// vi ediotr를 이용하여 Text 문서를 작성 한다.q

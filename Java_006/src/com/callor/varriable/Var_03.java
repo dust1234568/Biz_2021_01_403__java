@@ -73,7 +73,8 @@ public class Var_03 {
 		System.out.print(" = ");
 		System.out.println(intDan * num1);
 		
-
+		System.out.println(intDan + " x " + num1 + " = " + (intDan * num1));
+		System.out.println();
 
 		
 	}

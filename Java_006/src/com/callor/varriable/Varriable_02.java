@@ -35,35 +35,35 @@ public class Varriable_02 {
 		System.out.print(" + ");
 		System.out.print(num2);
 		System.out.print(" = ");
-		System.out.print(result1);
+		System.out.println(result1);
 
 		// 뺼셈
 		System.out.print(num1);
 		System.out.print(" - ");
 		System.out.print(num2);
 		System.out.print(" = ");
-		System.out.print(result3);
+		System.out.println(result3);
 
 		// 곱셈
 		System.out.print(num2);
 		System.out.print(" x ");
 		System.out.print(num1);
 		System.out.print(" = ");
-		System.out.print(result2);
+		System.out.println(result2);
 
 		// 나눗셈
 		System.out.print(num2);
 		System.out.print(" ÷ "); // ㄷ 입력 후 한자키
 		System.out.print(num1);
 		System.out.print(" = ");
-		System.out.print(result4);
+		System.out.println(result4);
 
 		// 나머지(MOD)
 		System.out.print(num2);
 		System.out.print(" MODE "); // 프리티 아웃
 		System.out.print(num1);
 		System.out.print(" = ");
-		System.out.print(result5);
+		System.out.println(result5);
 
 	}
 

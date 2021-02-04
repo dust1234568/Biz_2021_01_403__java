@@ -72,6 +72,8 @@ public class Var_03 {
 		System.out.print(num1);
 		System.out.print(" = ");
 		System.out.println(intDan * num1);
+		
+
 
 		
 	}

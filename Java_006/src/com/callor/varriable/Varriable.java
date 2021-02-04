@@ -5,7 +5,7 @@ public class Varriable {
 	public static void main(String[] args) {
 		
 		
-		// 연산하고자 하는 원래값이 저장되는 변수
+		// 연산하고자 하는 원래값이 저장되는 변수 선언
 		int intNum1 = 0; // int num1 = 0;
 		int intNum2 = 0;
 		

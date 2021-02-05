@@ -21,7 +21,8 @@ public class Loop_02 {
 		for (int i = 0; i < 10; i++) {
 
 		}
-
+		// i 값이 100부터 시작하여 i < 0 까지
+		// 1 씩 감소하면서 반복한다.
 		for (int i = 100; i > 0; i--) {
 			System.out.println(i);
 		}

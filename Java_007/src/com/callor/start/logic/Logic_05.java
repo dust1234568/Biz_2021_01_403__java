@@ -16,16 +16,50 @@ public class Logic_05 {
 
 	public static void main(String args[]) {
 
+		// 5만원권 계산
 		int pay = 4_789_800;
 		int paper = 50_000;
+		
+		// 정수를 정수로 나누는 연산을 했을 경우
+		// 결과도 정수(몫)으로 나타나는 연산 규칙을 활용한 결과
+		
 		int count = pay / paper;
-
 		System.out.println(paper + "원권 : " + count);
 		
-		int paper1 = 10_000;
-		int count1 = (pay - (count * paper))/ paper1;
+		// 1만원권 계산
+		// pay에서 5만원권 금액만큼 제외하고 1만원권 매수를 계산한다
 		
-		System.out.println(paper1 + "원권 : " + count1);
+		pay -= (paper * count); // 5만원권 제외 금액
+		paper = paper / 5;
+		count = pay / paper;
+		System.out.println(paper + "원권 : " + count);
+		
+		//5천원권 계산
+		// pay에서 1만원권 금액만큼 제외하고 5천원권 매수를 계산한다
+		pay -= (paper * count);
+		paper /= 2;
+		count = pay / paper;
+		System.out.println(paper + "원권 : " + count);
+		
+		//1천원권 계산
+		pay -= (paper * count);
+		paper /= 5;
+		count = pay / paper;
+		System.out.println(paper + "원권 : " + count);
+		
+		//5백원 계산
+		pay -= (paper * count);
+		paper /= 2;
+		count = pay / paper;
+		System.out.println(paper + "원권 : " + count);
+		
+		
+		
+		/*
+		 * int paper1 = 10_000;
+		 * int count1 = (pay - (count * paper))/ paper1;
+		 * System.out.println(paper1 + "원권 : " + count1);
+		 */
 	
 	}
 }

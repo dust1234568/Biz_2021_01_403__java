@@ -1,4 +1,4 @@
-package com.callor.start;
+package com.callor.start.loop;
 
 public class Loop_02 {
 	public static void main(String args[]) {

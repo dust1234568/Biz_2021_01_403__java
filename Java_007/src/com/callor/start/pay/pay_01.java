@@ -1,6 +1,6 @@
-package com.callor.start.logic;
+package com.callor.start.pay;
 
-public class Logic_06 {
+public class pay_01 {
 
 	public static void main(String args[]) {
 

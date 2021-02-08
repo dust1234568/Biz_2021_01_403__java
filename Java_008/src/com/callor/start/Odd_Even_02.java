@@ -14,7 +14,7 @@ public class Odd_Even_02 {
 			}
 		}
 		System.out.println("짝수합 : " + intSumEven);
-		
+
 		int intSumOdd = 0;
 		for (int i = 0; i < 100; i++) {
 			int num = i + 1;

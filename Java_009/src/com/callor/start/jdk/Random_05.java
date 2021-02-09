@@ -22,7 +22,7 @@ public class Random_05 {
 			}
 
 		}
-		System.out.println("1 ~ 100 까지 임의의 수중에서 짝수들만의 합 " + sum);
+		System.out.println("1 ~ 100 까지 임의의 수중에서 짝수의 합 " + sum);
 	}
 
 }

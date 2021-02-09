@@ -27,11 +27,13 @@ public class LupingGame {
 
 		// 난수 1개 생성
 		int rndNum = rnd.nextInt(100) + 1;
-		int num = 0;
+		int num1 = 0;
+		int num2 = 5;
 
 		while (true) {
-			num += 1;
-
+			num1 += 1;
+			num2 -= 1;
+			
 			System.out.print("숫자 입력 (-1 : Quit)  >> ");
 			int keyNum = scan.nextInt();
 			if (keyNum < 0) {
@@ -46,11 +48,11 @@ public class LupingGame {
 			} else if (keyNum < rndNum) {
 				System.out.println("입력값이 작습니다");
 			}
-			System.out.println(num + "번째 시도");
+			System.out.println(num1 + "번째 시도" + " / " + num2 + " : 남은 목숨");
 
 		} // while end
 		System.out.println("GAME OVER");
-		System.out.println("Your record : " + num + "번");
+		System.out.println("Your record : " + num1 + "번");
 
 	}
 

@@ -2,16 +2,15 @@ package com.callor.applications;
 
 import java.util.Scanner;
 
-public class App_02 {
+public class App_03 {
 
 	public static void main(String args[]) {
 
 		Scanner scan = new Scanner(System.in);
 
-		System.out.print("숫자 입력 (2 ~ 9) >>");
-
 		while (true) {
 
+			System.out.print("숫자 입력 (2 ~ 9) >> ");
 			int num = scan.nextInt();
 
 			System.out.println("==========================");
@@ -19,9 +18,8 @@ public class App_02 {
 			boolean bYes = (num < 2) || (num > 9);
 
 			if (bYes) {
-
-				System.out.println("경고");
-				// break;
+				System.out.println("입력한 숫자 : " + num);
+				System.out.println("값은 2 ~ 9 까지만 입력하세요");
 			} else {
 
 				System.out.println("구구단 " + num + "단");
@@ -41,5 +39,7 @@ public class App_02 {
 			}
 			System.out.println("--------------------------");
 		}
+
 	}
+
 }

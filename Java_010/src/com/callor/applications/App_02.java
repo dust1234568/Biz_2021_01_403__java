@@ -8,7 +8,7 @@ public class App_02 {
 
 		Scanner scan = new Scanner(System.in);
 
-		System.out.print("숫자 입력 (2 ~ 9) >>");
+		System.out.print("숫자 입력 (2 ~ 9) >> ");
 
 		while (true) {
 
@@ -38,9 +38,8 @@ public class App_02 {
 					System.out.println(num * num1);
 
 				}
-				System.out.println("==========================");
 			}
-
+			System.out.println("--------------------------");
 		}
 	}
 }

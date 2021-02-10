@@ -10,7 +10,7 @@ import java.util.Random;
  * 100개 중에 짝수가 있으면 짝수들의 합을 계산
  */
 
-public class Ramdom_05_01 {
+public class Random_05_01 {
 
 	public static void main(String[] args) {
 

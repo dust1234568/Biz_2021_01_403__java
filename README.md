@@ -36,3 +36,5 @@
 ##### git commit 명령 오류 상황
 * git commit -m 까지 입력 시 : error 발생
 * git commit 까지 입력 시 : vi editor
+
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fgjbae1212%2Fhit-counter)](https://hits.seeyoufarm.com)                    

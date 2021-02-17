@@ -35,7 +35,5 @@ public class Score_07 {
 		int intEng = scExV1.input("영어");
 		int intMath = scExV1.input("수학");
 		
-		
-		
 	}
 }

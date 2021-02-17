@@ -8,10 +8,20 @@ public class Score_05 {
 
 		ScoreServiceV4 scV4 = new ScoreServiceV4();
 
-		//scV4.score(242);
+		// scV4.score(242);
 
-		//scV4.score(80.666F);
+		// scV4.score(80.666F);
 
 		scV4.score(242, 88.666F);
+
+		scV4.print(82, 83, 77);
+		
+		int intKor = 90;
+		int intEng = 100;
+		int intMath = 100;
+		
+		scV4.print(intKor, intEng, intMath);
+		
+
 	}
 }

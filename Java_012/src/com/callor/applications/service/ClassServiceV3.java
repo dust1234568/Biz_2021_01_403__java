@@ -49,7 +49,6 @@ public class ClassServiceV3 {
 		 * print formatting 명령문
 		 * "" 안에 문자열을 작성하여 출력문을 만드는 명령문
 		 * %d(Decimal, 10진수) 위치에 정수값을 대신 부착하여 출력문 생성
-		 * 
 		 */
 		System.out.printf("%d + %d = %d \n", intNum1, intNum2, intNum1 + intNum2);
 		System.out.printf("%d x %d = %d \n", intNum1, intNum2, intNum1 * intNum2);

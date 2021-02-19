@@ -22,6 +22,11 @@ public class Score_06 {
 
 		}
 
+		int sum = 0;
+		for (int i = 0; i < 3; i++) {
+			sum += intScore[i];
+		}
+		System.out.println("총합 점수 : " + sum);
 	}
 
 }

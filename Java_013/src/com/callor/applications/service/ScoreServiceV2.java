@@ -20,6 +20,15 @@ public class ScoreServiceV2 {
 
 	public void input() {
 
+		/*
+		 * public String nextLin() {
+		 * 		return 키보드에서 입력받는 문자열;
+		 * }
+		 * 
+		 * 키보드를 통해서 문자열을 입력받기 위해서는
+		 * Scanner.nextLin() method 를 실행하고
+		 * return 값을 문자열변수에 저장한다
+		 */
 		System.out.println("학생 이름을 입력하세요");
 		System.out.print("이름 >> ");
 		strName = scan.nextLine();

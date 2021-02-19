@@ -39,8 +39,22 @@ public class IntegerEx_01 {
 
 		System.out.println(num3 * 3);
 
+		// 문자열형숫자를 정수형으로 바꿀떄
+		// 발생하는 오류 상황들
+
+		// NumberFormatException
+		// 문자열형숫자를 정수로 변환하려고 했더니
+		// 얼마(숫자)로 변환해야 할지 알 수 없다
+
+		// 문자열중에 빈칸이 있는 경우
 		num3 = Integer.valueOf("3 ");
+		// 문자열중에 숫자형이 아닌 문자열이 있는 경우
 		num3 = Integer.valueOf("3A");
+		num3 = Integer.valueOf("3 3");
+		num3 = Integer.valueOf("A3");
+		num3 = Integer.valueOf("3+3");
+		num3 = Integer.valueOf("3+");
+		num3 = Integer.valueOf("+3+");
 
 	}
 

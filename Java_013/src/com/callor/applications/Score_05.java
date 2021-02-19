@@ -28,8 +28,14 @@ public class Score_05 {
 		int kor_100 = 0;
 		for(int index = 0; index < 20; index++) {
 			
+			/*
+			 * kor_index 라는 코드가 index 변수값을 가져와서
+			 * kor_0...kor_100과 같은 방식으로 변환되지 않는다
+			 * java는 kro_index = 1000 이라는 코드를 만나면
+			 * kor_index 라는 변수가 선언되어 있는지 찾고 없으면 오류를 발생한다
+			 */
 			// kor_0 ~ kor_100
-			kor_index = 100;
+			// kor_index = 100;
 			
 		}
 	}

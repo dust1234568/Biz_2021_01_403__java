@@ -37,13 +37,15 @@ public class ScoreServiceV1 {
 	public void avg() {
 
 		floatAvg = intSum / 3.0F;
+
 	}
 
 	public void print() {
 
+		System.out.println("=======================================");
 		System.out.println("국어\t영어\t수학\t총점\t평균");
-		System.out.println("-------------------------------");
+		System.out.println("---------------------------------------");
 		System.out.println(intKor + "\t" + intEng + "\t" + intMath + "\t" + intSum + "\t" + floatAvg);
-		System.out.println("===============================");
+		System.out.println("=======================================");
 	}
 }

@@ -13,7 +13,6 @@ public class IntegerEx_01 {
 		 * Integer.valueof("문자열형숫자");
 		 * 
 		 * 문자열형 숫자를 4칙연산이 가능한 정수로 바꾸어서 return 해주는 method
-		 * 
 		 */
 		int intNum1 = Integer.valueOf(strNum1);
 		int intNum2 = Integer.valueOf(strNum2);

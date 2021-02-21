@@ -32,6 +32,7 @@ public class Array_02 {
 				intNumSum2 += intNum[i];
 			}
 			System.out.print(intNum[i] + " \t");
+			System.out.print((intNum[i] % 2 == 0 ) + "\t");
 
 		}
 		System.out.println();

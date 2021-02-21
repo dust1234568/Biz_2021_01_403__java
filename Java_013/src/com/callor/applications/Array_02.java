@@ -28,7 +28,7 @@ public class Array_02 {
 		for (int i = 0; i < 10; i++) {
 			intNum[i] = rnd.nextInt(100) + 1;
 			boolean bYes = intNum[i] % 2 == 0;
-			if (bYes) {
+			if (bYes) { // if (intNum[i] % 2 == 0) {}
 				intNumSum2 += intNum[i];
 			}
 			System.out.print(intNum[i] + " \t");

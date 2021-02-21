@@ -24,13 +24,13 @@ public class Array_01 {
 		System.out.println("-------------------------");
 
 		for (int i = 0; i < 5; i++) {
-			System.out.print((i + 1) + "\t");
+			System.out.print((i + 1) + "번" + "\t");
 			System.out.println(intKor[i]);
 			intKorSum += intKor[i];
 
 		}
 		System.out.println("=========================");
-		System.out.println("합계 : " + intKorSum);
+		System.out.println("합계 : " + intKorSum + "점");
 		System.out.println("=========================");
 	}
 

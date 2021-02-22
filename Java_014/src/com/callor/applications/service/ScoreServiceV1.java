@@ -89,6 +89,8 @@ public class ScoreServiceV1 {
 		intSum = new int[strName.length];
 		floatAvg = new float[strName.length];
 
+		// rnd.nextInt() method를 "호출하기 전"에 반드시 어디에선가 실행되어야 한다
+		rnd = new Random();
 	}
 
 	public void makeScore() {

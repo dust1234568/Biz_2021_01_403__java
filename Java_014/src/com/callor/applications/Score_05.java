@@ -69,7 +69,7 @@ public class Score_05 {
 
 		// 성적리스트 출력
 		for (int i = 0; i < intKor.length; i++) {
-			System.out.printf("%s\t%d\t%d\t%d\t%d\t%f\n", strName[i], intKor[i], intEng[i], intMath[i], intSum[i],
+			System.out.printf("%s\t%d\t%d\t%d\t%d\t%3.2f\n", strName[i], intKor[i], intEng[i], intMath[i], intSum[i],
 					floatAvg[i]);
 		}
 

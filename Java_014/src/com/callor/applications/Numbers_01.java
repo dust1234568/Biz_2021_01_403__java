@@ -35,12 +35,24 @@ public class Numbers_01 {
 		 */
 		int[] intNums = new int[10];
 
+		// 1 ~ 10 까지 배열에 순서대로 저장
 		for (int i = 0; i < intNums.length; i++) {
 			intNums[i] = i + 1;
 			
 			// System.out.println(intNums[i]);
 			System.out.printf("%d\t", intNums[i]);
 		}
-
+		
+		// 100,101,102,103,.....109
+		for ( int i = 0; i < intNums.length; i++) {
+			intNums[i] = 100 + i;
+			
+		}
+		
+		// 0,1,2,...9
+		for ( int i = 0; i < intNums.length; i++) {
+			intNums[i] = i;
+			
+		}
 	}
 }

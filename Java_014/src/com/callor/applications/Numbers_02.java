@@ -16,7 +16,7 @@ public class Numbers_02 {
 		intNum2[0] = 33;
 		
 		intNum[0] = intNum[1];
-		intNum[1] = intNum2[0];
+		intNum[1] = intNum2[1];
 		System.out.println("intNum1 : " + intNum[0] + "\t" + "intNum2 : " + intNum[1]);
 
 	}

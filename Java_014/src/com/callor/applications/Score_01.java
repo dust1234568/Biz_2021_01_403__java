@@ -2,6 +2,18 @@ package com.callor.applications;
 
 import java.util.Scanner;
 
+/*
+ * 학생 3명의 국어, 영어, 수학 점수를 키보드로 입력받아서
+ * (학생명의 과목점수를 저장할 배열을 선언)
+ * (intKor, intEng, intMath)
+ * Console에 리스트를 출력하기
+ * 
+ * 1. 학생 3명의 3과목의 점수를 저장할 배열
+ * 2. 배열이 나오면 일단 for 반복문이 한번쯤은 나타난다
+ * 3. 학생 3명의 3과목의 점수를 어떻게 입력받을 것인가
+ * 4. 학생 3명의 과목 점수를 어떻게 출력할 것인가
+ * 
+ */
 public class Score_01 {
 
 	public static void main(String[] args) {
@@ -10,13 +22,13 @@ public class Score_01 {
 
 		String[] strSub = new String[] { "국어", "영어", "수학" };
 
-		int[] intKor = new int[4];
-		int[] intEng = new int[4];
-		int[] intMath = new int[4];
+		int[] intKor = new int[3];
+		int[] intEng = new int[3];
+		int[] intMath = new int[3];
 
 		for (int i = 0; i < 3; i++) {
-
-			System.out.println((i + 1) + "번 학생");
+			int num = i + 1;
+			System.out.println(num + "번 학생");
 
 			System.out.print("국어점수 >> ");
 			intKor[i] = scan.nextInt();

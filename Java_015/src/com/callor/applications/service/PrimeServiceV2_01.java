@@ -4,20 +4,25 @@ public class PrimeServiceV2_01 {
 
 	public int prime(int keyNum) {
 
-		for (int i = 2; i < keyNum; i++) {
-			// true 이면소수가 아니다
-			if (keyNum % i == 0) {
+		// keyNum 값이 소수이면 return num
+		// 아니면 return -1
+		int index = 0;
+		for (index = 2; index < keyNum; index++) {
 
-				// prime() method 실행을 중단하고
-				// main(0 method에게 -1을 되돌려줘라
-				return -1;
+			boolean bYes = keyNum % index == 0;
+
+			if (bYes) {
+				break;
 			}
 		}
-		// num 값이 소수이여서 for() 반복문을 모두 수행하고
-		// 여기에 다다르면 num값을 그래도 return하라
-		return keyNum;
 
-	
+		if (index < keyNum) {
+			System.out.println(keyNum);
+			return -1;
+		} else {
+			System.out.println(keyNum);
+			return keyNum;
+		}
 
 	}
 }

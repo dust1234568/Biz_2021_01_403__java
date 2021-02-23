@@ -22,10 +22,10 @@ public class Homework_01 {
 			int result = psV2.prime(num);
 			if (result > 0) {
 
-				// 소수의 합
+				// (5) 소수의 합
 				sum += result;
 
-				// 소수 리스트
+				// (4) 소수 리스트
 				System.out.printf("%d,", result);
 			}
 		}

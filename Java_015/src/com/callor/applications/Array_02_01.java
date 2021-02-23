@@ -3,7 +3,7 @@ package com.callor.applications;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Array_02 {
+public class Array_02_01 {
 
 	public static void main(String[] args) {
 
@@ -21,18 +21,16 @@ public class Array_02 {
 		System.out.print("숫자 >> ");
 		int keyNum = scan.nextInt();
 
-		System.out.printf("값 %d가 저장된 위치 \n", keyNum);
-		for (int position = 0; position < intNums.length; position++) {
+		for (int i = 0; i < intNums.length; i++) {
 
-			boolean bYes = intNums[position] == keyNum;
+			boolean bYes = intNums[i] == keyNum;
 			if (bYes) {
-				// boolean식을 만족하는 i의 위치번호 출력
-				System.out.println(position + "번째");
 
+				// boolean식을 만족하는 i의 위치번호 출력
+				System.out.println(i + "번째");
 			}
 
 		}
 
 	}
-
 }

@@ -26,15 +26,15 @@ public class Score_011 {
 			for (int sb = 0; sb < strSubject.length; sb++) {
 
 				intScore[na][sb] = rnd.nextInt(100) + 1;
-				
+
 			}
 		}
-		
+
 		int intSum[] = new int[strName.length];
-		
+
 		// 총점 구하기
 		for (int na = 0; na < strName.length; na++) {
-			
+
 			intSum[na] = 0;
 			for (int sb = 0; sb < strSubject.length; sb++) {
 				intSum[na] += intScore[na][sb];

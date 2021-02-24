@@ -14,7 +14,7 @@ public class Homework_01 {
 		Random rnd = new Random();
 		int sum = 0;
 
-		// (2) 1 ~ 100 범위의 임의의 정수 100개 만들고
+		// (2) 2 ~ 101 범위의 임의의 정수 100개 만들고
 		for (int i = 0; i < 100; i++) {
 			int num = rnd.nextInt(100) + 2;
 

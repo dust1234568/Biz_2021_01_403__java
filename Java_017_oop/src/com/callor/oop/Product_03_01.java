@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import com.callor.oop.model.ProductVO;
 
-public class Product_03 {
+public class Product_03_01 {
 
 	public static void main(String[] args) {
 
@@ -45,36 +45,35 @@ public class Product_03 {
 			System.out.print("품목 >> ");
 			pVOs[i].strItem = scan.nextLine();
 
-			System.out.print("매입단가 >> ");
-			String iPrice = scan.nextLine();
-			pVOs[i].iPrice = Integer.valueOf(iPrice);
-
 			while (true) {
 
+				System.out.print("매입단가 >> ");
+				String strIPrice = scan.nextLine();
+				int intIprice = Integer.valueOf(strIPrice);
 				if (pVOs[i].iPrice < 0) {
 					System.out.println("0 미만은 입력 할 수 없습니다");
 					System.out.println("다시 입력해 주세요");
-					System.out.print("매입단가 >> ");
-					iPrice = scan.nextLine();
-					pVOs[i].iPrice = Integer.valueOf(iPrice);
+
 				} else {
+					pVOs[i].iPrice = intIprice;
 					break;
 				}
 			}
-			System.out.print("매출단가 >> ");
-			String oPrice = scan.nextLine();
-			pVOs[i].oPrice = Integer.valueOf(oPrice);
 
 			while (true) {
+				System.out.print("매출단가 >> ");
+				String strOPrice = scan.nextLine();
+				int intOPrice = Integer.valueOf(strOPrice);
 
-				if (pVOs[i].oPrice < 0) {
+				if (intOPrice < 0) {
 					System.out.println("0 미만은 입력 할 수 없습니다");
 					System.out.println("다시 입력해 주세요");
-					System.out.print("매출단가 >> ");
-					oPrice = scan.nextLine();
-					pVOs[i].oPrice = Integer.valueOf(oPrice);
-
 				} else {
+					// 정상처리되었으면
+					// 단가가 0 이상 입력되었으면
+					// VO에 값을 저장하고 다음단계로 진행
+					// 현 시점의 while() 은 중단하라
+					pVOs[i].oPrice = intOPrice;
 					break;
 				}
 

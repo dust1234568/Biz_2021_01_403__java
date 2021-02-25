@@ -3,6 +3,7 @@ package com.callor.oop;
 import java.util.Scanner;
 
 import com.callor.oop.model.ScoreVO;
+import com.callor.oop.service.ScoreServiceV1;
 
 public class Score_03 {
 
@@ -10,6 +11,8 @@ public class Score_03 {
 
 		ScoreVO sVO = new ScoreVO();
 
+		ScoreServiceV1 ssV1 = new ScoreServiceV1();
+		
 		Scanner scan = new Scanner(System.in);
 
 		System.out.println("============================");
@@ -22,45 +25,34 @@ public class Score_03 {
 		while (true) {
 			System.out.print("국어 점수를 입력하세요 >> ");
 			String strKor = scan.nextLine();
-
 			sVO.setIntKor(strKor);
 
 			// intKor에 -1이 담겨 있으면 다시 입력을 하도록 해야한다
-			if (sVO.intKor < 0) {
+			if (sVO.getIntKor() < 0) {
+				System.out.println("국어점수 유효성 검사 실패");
 				continue;
 			}
+			break;
 		}
 
-		System.out.print("영어 점수를 입력하세요 >> ");
 		while (true) {
 			System.out.print("영어 점수를 입력하세요 >> ");
 			String strEng = scan.nextLine();
-			try {
-				int intEng = Integer.valueOf(strEng);
-				sVO.intEng = intEng;
-				break;
-			} catch (Exception e) {
-				System.out.println("국어 점수는 숫자로만 입력");
+			sVO.setIntEng(strEng);
+			if (sVO.getIntEng() < 0) {
+				System.out.println("영어점수 유효성 검사 실패");
 				continue;
 			}
-
+			break;
 		}
 
-		System.out.print("수학 점수를 입력하세요 >> ");
-		while (true) {
-			System.out.print("영어 점수를 입력하세요 >> ");
-			String strMath = scan.nextLine();
-			try {
-				int intMath = Integer.valueOf(strMath);
-				sVO.intMath = intMath;
-				break;
-			} catch (Exception e) {
-				System.out.println("국어 점수는 숫자로만 입력");
-				continue;
-			}
-
-		}
-
+		//while (true) {
+		//	System.out.print("영어 점수를 입력하세요 >> ");
+		//	String strMath = scan.nextLine();
+		//}
+		
+		sVO.setIntKor(ssV1.inputScore("국어")+ "");
+		sVO.setIntEng(ssV1.);
 	}
 
 }

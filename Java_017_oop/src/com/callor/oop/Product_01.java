@@ -10,7 +10,16 @@ public class Product_01 {
 
 		ProductVO pVO = new ProductVO();
 
+		System.out.println("toString() " + pVO.toString());
+
 		Scanner scan = new Scanner(System.in);
+
+		System.out.println("========================================================");
+		System.out.println("상품정보 등록(입력) 시스템 V1");
+		System.out.println("--------------------------------------------------------");
+		System.out.println("상품정보를 입력하세요");
+		System.out.println("--------------------------------------------------------");
+
 		System.out.print("상품 코드 입력 >> ");
 		pVO.strPCode = scan.nextLine();
 
@@ -29,9 +38,13 @@ public class Product_01 {
 		System.out.print("매출 단가 입력 >> ");
 		pVO.oPrice = scan.nextInt();
 
-		System.out.println("=======================================================");
-		System.out.printf("%s\t%s\t%s\t%s\t%d\t%d\n", pVO.strPCode, pVO.strPName, pVO.strItem, pVO.strDName, pVO.iPrice,
-				pVO.oPrice);
-		System.out.println("-------------------------------------------------------");
+		// System.out.println("========================================================");
+		// System.out.printf("%s\t%s\t%s\t%s\t%d\t%d\n", pVO.strPCode, pVO.strPName,
+		// pVO.strItem, pVO.strDName, pVO.iPrice,
+		// pVO.oPrice);
+		// System.out.println("-------------------------------------------------------");
+
+		pVO.toString();
+
 	}
 }

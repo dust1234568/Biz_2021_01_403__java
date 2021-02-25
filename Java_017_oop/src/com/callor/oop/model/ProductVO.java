@@ -24,10 +24,59 @@ package com.callor.oop.model;
 public class ProductVO {
 
 	public String strPCode; // 상품코드
-	public String strPName;	//상품명(이름)
-	public String strItem;	// 품목명
-	public String strDName;	// 거래처
-	public int iPrice;		// 매입단가
-	public int oPrice;		// 매출단가
+	public String strPName; // 상품명(이름)
+	public String strItem; // 품목명
+	public String strDName; // 거래처
+	public int iPrice; // 매입단가
+	public int oPrice; // 매출단가
+
+	/*
+	 * java 에서는
+	 * class를 선언하면 public String toString() method가 자동으로 생성된다
+	 * 하지만 기본적으로 코드는 보이지 않는다
+	 * toString() method는 객체를 생성했을때 어떤 클래스를 사용했는지 와 
+	 * 생성된 객체가 컴퓨터 기억장치에 어떤 곳(주소)에 만들어져
+	 * 저장되어 있는지 알려주는 코드가 담겨있다
+	 * 
+	 * java 코딩에서 toStirng() method의 기본 역할은 크게 필요하지 않다
+	 * 
+	 * 그래서, 일반적으로 VO 클래스를 만들때는 임의로 toString() method를 "다시 만들어준다"
+	 * 그리고 인스턴스변수에 입력된 값을 알려주는 디버깅 코드를 생성한다
+	 * 
+	 * method Override (Overriding)
+	 * 메서드의 재정의
+	 * (java가) 자동으로 만들어져 있는 toString()을 개발자가 임의로 다시 만들었다
+	 * 
+	 * 원래 java 가 자동으로 생성한 코드는 감춰진다
+	 */
 	
+	public String toString() {
+		System.out.println("========================================================");
+		System.out.println("입력 정보 확인");
+		System.out.println("--------------------------------------------------------");
+		System.out.printf("상품코드 : %s\n", this.strPCode);
+		System.out.printf("상품명 : %s\n", this.strPName);
+		System.out.printf("거래처 : %s\n", this.strDName);
+		System.out.printf("품목 : %s\n", this.strItem);
+		System.out.printf("매입단가 : %d\n", this.iPrice);
+		System.out.printf("매출단가 : %d\n", this.oPrice);
+		System.out.println("========================================================");
+
+		// return ""; // return 값이 없다
+		return null;
+	}
+	public String toString(String[] strPCode, String[] strPName, String[] strItem, String[] strDName, int[] iPrice, int[] oPrice) {
+		System.out.println("========================================================");
+		System.out.println("입력 정보 확인");
+		System.out.println("--------------------------------------------------------");
+		System.out.printf("상품코드 : %s\n", this.strPCode);
+		System.out.printf("상품명 : %s\n", this.strPName);
+		System.out.printf("거래처 : %s\n", this.strDName);
+		System.out.printf("품목 : %s\n", this.strItem);
+		System.out.printf("매입단가 : %d\n", this.iPrice);
+		System.out.printf("매출단가 : %d\n", this.oPrice);
+		System.out.println("========================================================");
+
+		return "";
+	}
 }

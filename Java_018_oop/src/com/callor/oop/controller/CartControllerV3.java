@@ -16,7 +16,7 @@ public class CartControllerV3 {
 
 		CartVO[] cartVO = new CartVO[3];
 
-		for (int i = 0; 0 < cartVO.length; i++) {
+		for (int i = 0; i < cartVO.length; i++) {
 
 			System.out.print("구매자 이름 >> ");
 			cartVO[i].setCartUserName(scan.nextLine());

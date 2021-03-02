@@ -2,7 +2,7 @@ package com.callor.oop;
 
 import com.callor.oop.service.impl.MenuServiceImplV2;
 
-public class CartEx_05_01 {
+public class CartEx_06 {
 
 	public static void main(String[] args) {
 		

@@ -28,6 +28,7 @@ public class MenuServiceV1 implements MenuService {
 			System.out.println("Q. 종료");
 
 			System.out.println("------------------------");
+		System.out.println("입력 >> ");
 			String strMenu = scan.nextLine();
 			if (strMenu.equals("Q")) {
 				break;

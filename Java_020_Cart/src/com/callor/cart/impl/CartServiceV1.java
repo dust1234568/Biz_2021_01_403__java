@@ -28,7 +28,11 @@ public class CartServiceV1 implements CartService {
 		System.out.print("구매자 >> ");
 		String strUserName = scan.nextLine();
 
+		System.out.print("제품명 >> ");
+		String strProductName = scan.nextLine();
+
 		int intQty = 0;
+
 		while (true) {
 			System.out.print("수량 >> ");
 			String strQty = scan.nextLine();
@@ -42,12 +46,32 @@ public class CartServiceV1 implements CartService {
 			} catch (Exception e) {
 				System.out.println("수량은 숫자로만");
 			}
+		}
+		int intPrice = 0;
+		while (true) {
+			System.out.print("단가 >> ");
+			String strPrice = scan.nextLine();
+			try {
+				intPrice = Integer.valueOf(strPrice);
+				if (intPrice < 1000) {
+					System.out.println("단가는 1000 이상");
+					continue;
+				} // else { break; }
+				break;
+			} catch (Exception e) {
+				System.out.println("단가는 숫자로만");
+			}
 
 		}
+		
+		int intTotal = intQty * intPrice; 
+		
 		CartVO cartVO = new CartVO();
 		cartVO.setUserName(strUserName);
+		cartVO.setProName(strProductName);
 		cartVO.setQty(intQty);
-
+		cartVO.setPrice(intPrice);
+		cartVO.setTotal(intTotal);
 		cartList.add(cartVO);
 	}
 

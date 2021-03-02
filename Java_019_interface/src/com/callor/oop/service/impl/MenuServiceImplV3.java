@@ -15,6 +15,8 @@ public class MenuServiceImplV3 implements MenuService {
 
 	/*
 	 * 메뉴를 보여주고 선택된 메뉴에 따라 카트에 추가, 삭제 하거나 리스트를 보여줘야 한다
+	 * 이 기능을 MenuService에서 구현하는 것이 아니라 selectMenu()를 호출한 곳에서 구현을 해야 한다
+	 * 호출한 곳에서 selectMenu() 결과에 따라 기능을 수행하려면 
 	 * 사용자가 메뉴를 보고 선택을 했을 때 선택된 결과값을 호출한 곳에 return 해줘야 한다
 	 * 
 	 * 이렇게 설계를 변경하려면 method를 void type이 아닌 int나 String등 다른 type으로 변경해야 한다
@@ -22,8 +24,9 @@ public class MenuServiceImplV3 implements MenuService {
 	 * 
 	 * interface, class의 원형을 변경하지 않고 현재 method에만 어떤 기능을 추가하고자 한다
 	 * 
+	 * 별도로 menuItem 변수를 하나 선언하고 이 변수값으로 선택된 메뉴를  알 수 있도록 하겠다
+	 * 
 	 */
-
 	public Integer menuItem = null;
 
 	/*

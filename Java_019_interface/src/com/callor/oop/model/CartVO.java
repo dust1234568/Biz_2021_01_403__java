@@ -12,74 +12,59 @@ public class CartVO {
 	private String standard; // 규격
 	private String date; // 날짜
 	private String time; // 시각
-	private String qty; // 수량
-	private String price; // 구매단가
-	private String total; // 구매금액
-
+	private int qty; // 수량
+	private int price; // 구매단가
+	private int total; // 구매금액
+	
+	// VO 변수 변경시 지우고 다시 get,set 설정
 	public String getUserName() {
 		return userName;
 	}
-
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-
 	public String getProductName() {
 		return productName;
 	}
-
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-
 	public String getStandard() {
 		return standard;
 	}
-
 	public void setStandard(String standard) {
 		this.standard = standard;
 	}
-
 	public String getDate() {
 		return date;
 	}
-
 	public void setDate(String date) {
 		this.date = date;
 	}
-
 	public String getTime() {
 		return time;
 	}
-
 	public void setTime(String time) {
 		this.time = time;
 	}
-
-	public String getQty() {
+	public int getQty() {
 		return qty;
 	}
-
-	public void setQty(String qty) {
+	public void setQty(int qty) {
 		this.qty = qty;
 	}
-
-	public String getPrice() {
+	public int getPrice() {
 		return price;
 	}
-
-	public void setPrice(String price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
-
-	public String getTotal() {
+	public int getTotal() {
 		return total;
 	}
-
-	public void setTotal(String total) {
+	public void setTotal(int total) {
 		this.total = total;
 	}
-
 	@Override
 	public String toString() {
 		return "CartVO [userName=" + userName + ", productName=" + productName + ", standard=" + standard + ", date="

@@ -27,17 +27,24 @@ public class CartServiceImplV3 implements CartService {
 			System.out.println("빛나라 카트 시스템 V3");
 			System.out.println("----------------------------------");
 
-			System.out.print("구매자 >> ");
+			System.out.print("구매자(Quit : 끝내기)>> ");
 			String strUserName = scan.nextLine();
+			// while() 반복문을 사용하여 코드를 작성할때는 사용자가
+			// 반복문을 종료(중단)할 수 있는 탈출구를 만들어 주어야 한다
+			if (strUserName == "Quit") {
+				break; // return;
+			}
 
-			System.out.print("상품명 >> ");
+			System.out.print("상품명(Quit : 끝내기) >> ");
 			String strProName = scan.nextLine();
+			if (strProName == "Quit") {
+				break; // return;
+			}
 
-			System.out.print("수량 >> ");
-			String strQty = scan.nextLine();
-
+			int intQty = 0;
 			while (true) {
-				int intQty = 0;
+				System.out.print("수량 >> ");
+				String strQty = scan.nextLine();
 				try {
 					intQty = Integer.valueOf(strQty);
 					if (intQty < 1) {
@@ -50,6 +57,30 @@ public class CartServiceImplV3 implements CartService {
 				}
 
 			}
+			int intPrice = 0;
+			while (true) {
+				System.out.print("단가 >> ");
+				String strPrice = scan.nextLine();
+				try {
+					intPrice = Integer.valueOf(strPrice);
+					if (intPrice < 1000) {
+						System.out.println("단가는 1000 이상 입력하세요");
+					} else {
+						break;
+					}
+				} catch (Exception e) {
+					System.out.println("단가는 숫자로만 입력하세요");
+				}
+
+			}
+			// 카트에 저장
+			CartVO cartVO = new CartVO();
+			cartVO.setUserName(strUserName);
+			cartVO.setProductName(strProName);
+			cartVO.setPrice(intPrice);
+			cartVO.setQty(intQty);
+			cartVO.setTotal(intPrice * intQty);
+			cartList.add(cartVO);
 
 		}
 
@@ -57,7 +88,12 @@ public class CartServiceImplV3 implements CartService {
 
 	@Override
 	public void printCart() {
-		// TODO Auto-generated method stub
+
+		int nSize = cartList.size();
+		for (int i = 0; i < nSize; i++) {
+			System.out.println(cartList.get(i).toString());
+
+		}
 
 	}
 

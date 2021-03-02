@@ -12,6 +12,7 @@ public class CartServiceImplV4 implements CartService {
 	private List<CartVO> cartList;
 	private Scanner scan;
 
+	// 생성자 method는 클래스와 이름이 같고 return type(void, int...이 없다
 	public CartServiceImplV4() {
 
 		cartList = new ArrayList<CartVO>();
@@ -79,8 +80,14 @@ public class CartServiceImplV4 implements CartService {
 	public void printCart() {
 
 		int nSize = cartList.size();
+		System.out.println("=====================================");
+		System.out.println("구매자\t상품명\t수량\t단가\t금액");
 		for (int i = 0; i < nSize; i++) {
-			System.out.println(cartList.get(i).toString());
+			System.out.print(cartList.get(i).getUserName() + "\t");
+			System.out.print(cartList.get(i).getProductName() + "\t");
+			System.out.print(cartList.get(i).getQty() + "\t");
+			System.out.print(cartList.get(i).getPrice() + "\t");
+			System.out.print(cartList.get(i).getTotal() + "\n");
 
 		}
 

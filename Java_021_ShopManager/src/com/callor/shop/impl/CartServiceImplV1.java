@@ -88,8 +88,9 @@ public class CartServiceImplV1 implements CartService {
 	@Override
 	public void printCart() {
 
-		System.out.println("* 전체 장바구니 리스트");
 		System.out.println("=================================================");
+		System.out.println("* 전체 장바구니 리스트");
+		System.out.println("-------------------------------------------------");
 		System.out.println("구매자\t상품명\t단가\t수량\t합계");
 		System.out.println("-------------------------------------------------");
 
@@ -118,12 +119,15 @@ public class CartServiceImplV1 implements CartService {
 
 	@Override
 	public void printUserCart() {
+		
 		System.out.println("=================================================");
 		System.out.println("출력할 구매자 이름을 입력하세요");
 		System.out.println("-------------------------------------------------");
+		
 		System.out.print("이름 >> ");
 		String strName = scan.nextLine();
 
+		System.out.println("-------------------------------------------------");
 		System.out.println(strName + "\t " + "장바구니 리스트");
 		System.out.println("=================================================");
 		System.out.println("구매자\t상품명\t단가\t수량\t합계");
@@ -132,7 +136,7 @@ public class CartServiceImplV1 implements CartService {
 		// 카트리스트 전체 입력 개수
 		int nSize = cartList.size();
 		int intTotal = 0;
-		// 이름별 입력 개수
+		// 입력된 이름별 개수
 		int count = 0;
 
 		for (int i = 0; i < nSize; i++) {

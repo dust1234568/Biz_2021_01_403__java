@@ -128,7 +128,7 @@ public class CartServiceImplV1 implements CartService {
 		String strName = scan.nextLine();
 
 		System.out.println("-------------------------------------------------");
-		System.out.println(strName + "\t " + "장바구니 리스트");
+		System.out.println("*" + strName + "\t " + "장바구니 리스트");
 		System.out.println("=================================================");
 		System.out.println("구매자\t상품명\t단가\t수량\t합계");
 		System.out.println("-------------------------------------------------");

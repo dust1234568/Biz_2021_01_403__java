@@ -6,9 +6,11 @@ import com.callor.shop.service.MenuService;
 
 public class MenuServiceImplV1 implements MenuService {
 
+	// 선언만
 	Scanner scan;
 
 	public MenuServiceImplV1() {
+		// 생성자 method 에서 초기화
 		scan = new Scanner(System.in);
 	}
 

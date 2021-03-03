@@ -2,6 +2,8 @@ package com.callor.shop.model;
 
 public class CartVO {
 
+	// private 인스턴스 변수 선언
+	// 추상화
 	private String userName;
 	private String productName;
 	private String date;

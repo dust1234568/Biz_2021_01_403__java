@@ -9,10 +9,12 @@ import com.callor.shop.service.CartService;
 
 public class CartServiceImplV1 implements CartService {
 
+	// 선언만
 	private List<CartVO> cartList;
 	private Scanner scan;
 
 	public CartServiceImplV1() {
+		// 생성자 method에서 초기화
 		cartList = new ArrayList<CartVO>();
 		scan = new Scanner(System.in);
 	}
@@ -70,13 +72,15 @@ public class CartServiceImplV1 implements CartService {
 
 		int intTotal = intQty * intPrice;
 
+		// 카트 정보 생성
 		CartVO cartVO = new CartVO();
+		// 카트 정보 입력
 		cartVO.setUserName(userName);
 		cartVO.setProductName(productName);
 		cartVO.setIntQty(intQty);
 		cartVO.setIntPrice(intPrice);
 		cartVO.setIntTotal(intTotal);
-
+		// 카트리스트 추가
 		cartList.add(cartVO);
 
 	}
@@ -89,7 +93,9 @@ public class CartServiceImplV1 implements CartService {
 		System.out.println("구매자\t상품명\t단가\t수량\t합계");
 		System.out.println("-------------------------------------------------");
 
+		// 카트리스트 전체 입력 개수
 		int nSize = cartList.size();
+		// 카트리스트 전체 합계
 		int intTotal = 0;
 		int count = 0;
 
@@ -123,8 +129,10 @@ public class CartServiceImplV1 implements CartService {
 		System.out.println("구매자\t상품명\t단가\t수량\t합계");
 		System.out.println("-------------------------------------------------");
 
+		// 카트리스트 전체 입력 개수
 		int nSize = cartList.size();
 		int intTotal = 0;
+		// 이름별 입력 개수
 		int count = 0;
 
 		for (int i = 0; i < nSize; i++) {

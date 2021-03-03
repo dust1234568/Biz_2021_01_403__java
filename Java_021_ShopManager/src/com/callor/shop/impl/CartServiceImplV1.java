@@ -103,7 +103,7 @@ public class CartServiceImplV1 implements CartService {
 		cartVO.setIntPrice(intPrice);
 		cartVO.setIntTotal(intTotal);
 		// 카트리스트 추가
-		// Arraylist 로 생성된 배열에 입력값이 저장된 정보를 배열로 입력해준다 
+		// ArrayList 로 생성된 배열에 입력값이 저장된 정보를 배열로 입력해준다 
 		// 배열의 끝이 정해지지 않아서 리스트를 원하는 만큼 생성 가
 		cartList.add(cartVO);
 

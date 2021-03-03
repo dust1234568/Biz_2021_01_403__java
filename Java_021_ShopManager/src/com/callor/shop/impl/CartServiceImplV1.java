@@ -119,11 +119,11 @@ public class CartServiceImplV1 implements CartService {
 
 	@Override
 	public void printUserCart() {
-		
+
 		System.out.println("=================================================");
 		System.out.println("출력할 구매자 이름을 입력하세요");
 		System.out.println("-------------------------------------------------");
-		
+
 		System.out.print("이름 >> ");
 		String strName = scan.nextLine();
 

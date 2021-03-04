@@ -45,9 +45,15 @@ public class MenuServiceImplV1 implements MenuService {
 			}
 
 			/*
-			 * try { Integer intMenu = Integer.valueOf(strMenu); if (intMenu >= 1 && intMenu
-			 * <= 3) { return intMenu; } } catch (Exception e) { // TODO: handle exception }
+			 * try { Integer intMenu = Integer.valueOf(strMenu); 
+			 * if (intMenu >= 1 && intMenu <= 3) { 
+			 * return intMenu; 
+			 *  }
+			 * } catch (Exception e) { 
+			 *  // TODO: handle exception 
+			 * }
 			 */
+			
 			// int가 아닌 Integer로 선언
 			Integer intMenu = null;
 			try {

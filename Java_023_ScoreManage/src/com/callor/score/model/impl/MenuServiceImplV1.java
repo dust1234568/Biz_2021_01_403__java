@@ -23,9 +23,9 @@ public class MenuServiceImplV1 implements MenuService {
 			System.out.println("빛나라 고교 성적처리 시스템");
 			System.out.println(Values.sLine);
 			System.out.println(Values.MENU_INPUT + "." + "학생성적 점수 생성");
-			System.out.println(Values.MENU_SAVE_FILE + "." + "학생성적 점수 생성");
-			System.out.println(Values.MENU_SCORE_CHECK + "." + "학생성적 점수 생성");
-			System.out.println("QUIT" + "." + "학생성적 점수 생성");
+			System.out.println(Values.MENU_SAVE_FILE + "." + "학생성적 점수 파일에 저장");
+			System.out.println(Values.MENU_SCORE_CHECK + "." + "성적결과 확인");
+			System.out.println("QUIT" + "." + "끝내기");
 			System.out.println(Values.dLine);
 			System.out.print("선택 >> ");
 			String strNum = scan.nextLine();
@@ -36,12 +36,14 @@ public class MenuServiceImplV1 implements MenuService {
 			}
 			try {
 				int intNum = Integer.valueOf(strNum);
-				if (intNum == 1) {
-					System.out.println("");
+				if (intNum >= 1 && intNum <= 3) {
+					return intNum; 
+				} else {
+					System.out.println("업무는 1 ~ 3번 까지 입력하세요");
 				}
 				
 			} catch (Exception e) {
-				// TODO: handle exception
+			System.out.println("업무는 QUIT, 1 ~ 3 번 까지 입력하세요");
 			}
 
 		}

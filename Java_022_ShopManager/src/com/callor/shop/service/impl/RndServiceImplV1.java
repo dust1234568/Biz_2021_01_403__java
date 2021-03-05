@@ -9,28 +9,38 @@ public class RndServiceImplV1 {
 
 	private String fileName;
 	private Random rnd;
+	int[] num = new int[100];
 
 	FileWriter fileWriter = null;
 	PrintWriter printer = null;
 
+	// 생성자 method
 	public RndServiceImplV1() {
 		fileName = "src/com/callor/shop/files/nums.txt";
 		rnd = new Random();
 	}
 
-	public void rndService() {
+	public void rndMakeService() {
+
+		for (int i = 0; i < num.length; i++) {
+
+			num[i] = rnd.nextInt(1000) + 1;
+			if (i % 5 == 0) {
+				System.out.println();
+			}
+			System.out.print(num[i] + ":");
+		}
+
+	}
+
+	public void rndSaveService() {
 
 		try {
 			fileWriter = new FileWriter(fileName);
 			printer = new PrintWriter(fileWriter);
 
-			for (int i = 0; i < 100; i++) {
-				int num = rnd.nextInt(1000) + 1;
-				Integer strNum = Integer.valueOf(num);
-				String numsList = String.format("%d:%d:%d:%d:%d", num);
-				printer.println(numsList);
-				// printer.println(num);
-
+			for (int i = 0; i < num.length; i++) {
+				printer.print(num[i] + ":");
 			}
 
 			printer.close();

@@ -8,7 +8,8 @@ public class FileWriter_05 {
 
 		RndServiceImplV1 rService = new RndServiceImplV1();
 
-		rService.rndService();
+		rService.rndMakeService();
+		rService.rndSaveService();
 
 	}
 

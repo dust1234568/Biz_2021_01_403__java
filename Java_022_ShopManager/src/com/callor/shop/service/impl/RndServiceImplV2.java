@@ -43,16 +43,16 @@ public class RndServiceImplV2 {
 
 		Random rnd = new Random();
 		for (int i = 0; i < 100; i++) {
-			Integer num = rnd.nextInt(1000) + 1;
+			Integer num = rnd.nextInt(100) + 1;
 			intList.add(num);
 
 		}
 
 	}
-	public void saveFileRnd() {
-		
-		this.saveFileRnd("src/com/callor/shop/files/nums_rnd.txt");
-	}
+	//public void saveFileRnd() {
+	//	
+	//	this.saveFileRnd("src/com/callor/shop/files/nums_rnd.txt");
+	//}
 	
 	
 	/*

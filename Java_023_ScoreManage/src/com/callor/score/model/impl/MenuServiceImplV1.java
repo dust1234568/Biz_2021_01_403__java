@@ -31,6 +31,7 @@ public class MenuServiceImplV1 implements MenuService {
 			String strNum = scan.nextLine();
 
 			if (strNum.equals("QUIT")) {
+				System.out.println("업무 종료");
 				return null;
 			}
 			try {

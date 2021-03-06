@@ -19,10 +19,14 @@ public class ScoreServiceImplV1 implements ScoreService {
 	// List는 모든 method에서 공용으로 사용되므로 method 바깥에서 선언하고
 
 	private List<Integer> sList;
+	private List<Integer> nList;
 
 	public ScoreServiceImplV1() {
 		// 생성자 method에서 초기화 => 메모리 누수 관리
+		// sList = 랜덤값 을 생성하여 sList에 저장하기위해 초기화
 		sList = new ArrayList<Integer>();
+		// nLIST = 순번을 생성하기위해 초기화
+		nList = new ArrayList<Integer>();
 
 	}
 
@@ -37,6 +41,10 @@ public class ScoreServiceImplV1 implements ScoreService {
 			Integer num = rnd.nextInt(100) + 1;
 			sList.add(num);
 
+		}
+		
+		for (int i = 0; i < 20; i++) {
+			nList.add(i);
 		}
 
 	}
@@ -144,22 +152,23 @@ public class ScoreServiceImplV1 implements ScoreService {
 
 		}
 
-		List<ScoreVO> nCount = new ArrayList<ScoreVO>();
-		ScoreVO count = new ScoreVO();
-		for (ScoreVO nC : scoreList) {
-			int[] count1 = new int[20];
-			count.setCount(Integer.valueOf(count1[i]));
-			nCount.add(count);
-		}
-
 		System.out.println(Values.dLine);
 		System.out.println("순번\t국어\t영어\t수학\t음악\t국사\t총점\t평균");
 		System.out.println(Values.sLine);
 
 		for (ScoreVO vo : scoreList) {
 
-			System.out.printf("%d\t%d\t%d\t%d\t%d\t%d\t%d\t%3.1f\n",vo.getCount(), vo.getKor(), vo.getEng(), vo.getMath(),
-					vo.getMusic(), vo.getHistory(), vo.getTotal(), vo.getAvg());
+			System.out.printf("%d\t", vo.getKor());
+			System.out.printf("%d\t", vo.getEng());
+			System.out.printf("%d\t", vo.getMath());
+			System.out.printf("%d\t", vo.getMusic());
+			System.out.printf("%d\t", vo.getHistory());
+			System.out.printf("%d\t", vo.getTotal());
+			System.out.printf("%3.1f\n", vo.getAvg());
+
+			// System.out.printf("%d\t%d\t%d\t%d\t%d\t%d\t%d\t%3.1f\n", vo.getCount(),
+			// vo.getKor(), vo.getEng(), vo.getMath(), vo.getMusic(), vo.getHistory(),
+			// vo.getTotal(), vo.getAvg());
 
 			// System.out.print(vo.getKor() + "\t");
 			// System.out.print(vo.getEng() + "\t");

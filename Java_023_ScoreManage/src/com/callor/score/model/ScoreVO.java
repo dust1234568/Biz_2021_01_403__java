@@ -3,6 +3,7 @@ package com.callor.score.model;
 public class ScoreVO {
 
 	private String num;
+	private int Count;
 	private int Kor;
 	private int Eng;
 	private int Math;
@@ -17,9 +18,10 @@ public class ScoreVO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ScoreVO(String num, int kor, int eng, int math, int music, int history) {
+	public ScoreVO(String num, int count, int kor, int eng, int math, int music, int history) {
 		super();
 		this.num = num;
+		Count = count;
 		Kor = kor;
 		Eng = eng;
 		Math = math;
@@ -35,6 +37,14 @@ public class ScoreVO {
 		this.num = num;
 	}
 
+	public int getCount() {
+		return Count;
+	}
+
+	public void setCount(int count) {
+		Count = count;
+	}
+	
 	public int getKor() {
 		return Kor;
 	}
@@ -93,7 +103,7 @@ public class ScoreVO {
 
 	@Override
 	public String toString() {
-		return "ScoreVO [num=" + num + ", Kor=" + Kor + ", Eng=" + Eng + ", Math=" + Math + ", Music=" + Music
+		return "ScoreVO [num=" + num + ", Count=" + Count + ", Kor=" + Kor + ", Eng=" + Eng + ", Math=" + Math + ", Music=" + Music
 				+ ", History=" + History + ", total=" + total + ", avg=" + avg + "]";
 	}
 

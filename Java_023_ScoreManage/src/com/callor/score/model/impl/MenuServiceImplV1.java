@@ -25,30 +25,28 @@ public class MenuServiceImplV1 implements MenuService {
 			System.out.println(Values.MENU_INPUT + "." + "학생성적 점수 생성");
 			System.out.println(Values.MENU_SAVE_FILE + "." + "학생성적 점수 파일에 저장");
 			System.out.println(Values.MENU_SCORE_CHECK + "." + "성적결과 확인");
-			System.out.println("QUIT" + "." + "끝내기");
+			System.out.println("QUIT. 끝내기");
 			System.out.println(Values.dLine);
 			System.out.print("선택 >> ");
 			String strNum = scan.nextLine();
 
 			if (strNum.equals("QUIT")) {
-				System.out.println("업무 종료");
-				break;
+				return null;
 			}
 			try {
-				int intNum = Integer.valueOf(strNum);
-				if (intNum >= 1 && intNum <= 3) {
+				Integer intNum = Integer.valueOf(strNum);
+				if (intNum >= Values.MENU_START && intNum <= Values.MENU_LAST) {
 					return intNum; 
 				} else {
-					System.out.println("업무는 1 ~ 3번 까지 입력하세요");
+					System.out.printf("업무는 %d ~ %d번 까지 입력하세요", Values.MENU_START, Values.MENU_LAST);
 				}
 				
 			} catch (Exception e) {
-			System.out.println("업무는 QUIT, 1 ~ 3 번 까지 입력하세요");
+			System.out.printf("업무는 QUIT, %d ~ %d 번 까지 입력하세요", Values.MENU_START, Values.MENU_LAST);
 			}
 
 		}
 
-		return null;
 	}
 
 }

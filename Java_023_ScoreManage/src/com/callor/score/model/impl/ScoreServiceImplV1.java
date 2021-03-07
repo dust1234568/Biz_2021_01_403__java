@@ -25,8 +25,6 @@ public class ScoreServiceImplV1 implements ScoreService {
 		// 생성자 method에서 초기화 => 메모리 누수 관리
 		// sList = 랜덤값 을 생성하여 sList에 저장하기위해 초기화
 		sList = new ArrayList<Integer>();
-		// nLIST = 순번을 생성하기위해 초기화
-		nList = new ArrayList<Integer>();
 
 	}
 
@@ -41,10 +39,6 @@ public class ScoreServiceImplV1 implements ScoreService {
 			Integer num = rnd.nextInt(100) + 1;
 			sList.add(num);
 
-		}
-		
-		for (int i = 0; i < 20; i++) {
-			nList.add(i);
 		}
 
 	}
@@ -120,24 +114,31 @@ public class ScoreServiceImplV1 implements ScoreService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		// 파일 읽기 종
-
+		// 파일 읽기 종료
+		
+		// strList 처음부터 끝까지 반복하면서 요소들을 하나씩 getter하여 str객체에 담아준다
+		// for 반복문 내의 코드로 str 객체값을 전달하여 사용할 수 있도록 만들어 준다
 		for (String str : strList) {
-
+			
+			// str 객체에 저장된 값들을 ":" 기준으로 나누어서 String str 객체배열에 저장한다
 			String[] score = str.split(":");
 
+			// ScoreVO 클래스로 scoreVO 객체를 선언하고 초기화
 			ScoreVO scoreVO = new ScoreVO();
 
+			// scoreVO 클래스의 setter() method에 값들을 저장한다
 			scoreVO.setKor(Integer.valueOf(score[0]));
 			scoreVO.setEng(Integer.valueOf(score[1]));
 			scoreVO.setMath(Integer.valueOf(score[2]));
 			scoreVO.setMusic(Integer.valueOf(score[3]));
 			scoreVO.setHistory(Integer.valueOf(score[4]));
 
+			// scoreVO에 저장된 값들을 scoreList에 한줄씩 리스트로 저장한다
 			scoreList.add(scoreVO);
 
 		}
 
+		// 
 		for (ScoreVO vo : scoreList) {
 			int sum = vo.getKor();
 			sum += vo.getEng();

@@ -7,6 +7,7 @@ import com.callor.score.values.Values;
 
 public class MenuServiceImplV1 implements MenuService {
 
+	// 1
 	private Scanner scan;
 
 	public MenuServiceImplV1() {

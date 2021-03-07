@@ -19,7 +19,6 @@ public class ScoreServiceImplV1 implements ScoreService {
 	// List는 모든 method에서 공용으로 사용되므로 method 바깥에서 선언하고
 
 	private List<Integer> sList;
-	private List<Integer> nList;
 
 	public ScoreServiceImplV1() {
 		// 생성자 method에서 초기화 => 메모리 누수 관리
@@ -138,6 +137,19 @@ public class ScoreServiceImplV1 implements ScoreService {
 
 		}
 
+		for (ScoreVO vo : scoreList) {
+			
+			
+			int[] nCount = new int[20];
+			
+			for (int i = 0; i < 20; i++) {
+				
+				nCount[i] = i;
+				vo.setCount(nCount[i]);
+				
+			}
+		}
+		
 		// 
 		for (ScoreVO vo : scoreList) {
 			int sum = vo.getKor();
@@ -159,6 +171,7 @@ public class ScoreServiceImplV1 implements ScoreService {
 
 		for (ScoreVO vo : scoreList) {
 
+			System.out.printf("%d\t", vo.getCount());
 			System.out.printf("%d\t", vo.getKor());
 			System.out.printf("%d\t", vo.getEng());
 			System.out.printf("%d\t", vo.getMath());

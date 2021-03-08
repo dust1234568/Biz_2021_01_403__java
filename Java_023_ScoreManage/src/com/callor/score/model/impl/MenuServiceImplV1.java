@@ -44,7 +44,7 @@ public class MenuServiceImplV1 implements MenuService {
 				}
 				
 			} catch (Exception e) {
-			System.out.printf("업무는 QUIT, %d ~ %d 번 까지 입력하세요", Values.MENU_START, Values.MENU_LAST);
+				System.out.printf("업무는 QUIT, %d ~ %d 번 까지 입력하세요", Values.MENU_START, Values.MENU_LAST);
 			}
 
 		}

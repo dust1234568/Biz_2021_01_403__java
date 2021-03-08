@@ -114,11 +114,11 @@ public class ScoreServiceImplV1 implements ScoreService {
 			e.printStackTrace();
 		}
 		// 파일 읽기 종료
-		
+
 		// strList 처음부터 끝까지 반복하면서 요소들을 하나씩 getter하여 str객체에 담아준다
 		// for 반복문 내의 코드로 str 객체값을 전달하여 사용할 수 있도록 만들어 준다
 		for (String str : strList) {
-			
+
 			// str 객체에 저장된 값들을 ":" 기준으로 나누어서 String str 객체배열에 저장한다
 			String[] score = str.split(":");
 
@@ -137,20 +137,23 @@ public class ScoreServiceImplV1 implements ScoreService {
 
 		}
 
+		List<Integer> sVO = new ArrayList<Integer>();
 		for (ScoreVO vo : scoreList) {
-			
-			
-			int[] nCount = new int[20];
-			
+
+			int nCount = 0;
+
 			for (int i = 0; i < 20; i++) {
+
+				nCount = i;
+				vo.setCount(nCount);
 				
-				nCount[i] = i;
-				vo.setCount(nCount[i]);
-				
+				sVO.add(nCount);
 			}
+
+			
 		}
-		
-		// 
+
+		//
 		for (ScoreVO vo : scoreList) {
 			int sum = vo.getKor();
 			sum += vo.getEng();
@@ -171,18 +174,17 @@ public class ScoreServiceImplV1 implements ScoreService {
 
 		for (ScoreVO vo : scoreList) {
 
-			System.out.printf("%d\t", vo.getCount());
-			System.out.printf("%d\t", vo.getKor());
-			System.out.printf("%d\t", vo.getEng());
-			System.out.printf("%d\t", vo.getMath());
-			System.out.printf("%d\t", vo.getMusic());
-			System.out.printf("%d\t", vo.getHistory());
-			System.out.printf("%d\t", vo.getTotal());
-			System.out.printf("%3.1f\n", vo.getAvg());
+			System.out.printf("%d\t%d\t%d\t%d\t%d\t%d\t%d\t%3.1f\n", vo.getCount(), vo.getKor(), vo.getEng(),
+					vo.getMath(), vo.getMusic(), vo.getHistory(), vo.getTotal(), vo.getAvg());
 
-			// System.out.printf("%d\t%d\t%d\t%d\t%d\t%d\t%d\t%3.1f\n", vo.getCount(),
-			// vo.getKor(), vo.getEng(), vo.getMath(), vo.getMusic(), vo.getHistory(),
-			// vo.getTotal(), vo.getAvg());
+			// System.out.printf("%d\t", vo.getCount());
+			// System.out.printf("%d\t", vo.getKor());
+			// System.out.printf("%d\t", vo.getEng());
+			// System.out.printf("%d\t", vo.getMath());
+			// System.out.printf("%d\t", vo.getMusic());
+			// System.out.printf("%d\t", vo.getHistory());
+			// System.out.printf("%d\t", vo.getTotal());
+			// System.out.printf("%3.1f\n", vo.getAvg());
 
 			// System.out.print(vo.getKor() + "\t");
 			// System.out.print(vo.getEng() + "\t");

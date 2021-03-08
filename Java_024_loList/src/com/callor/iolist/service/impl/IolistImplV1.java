@@ -138,15 +138,15 @@ public class IolistImplV1 implements IolistService {
 		
 		for (ListVO vo : dList) {
 			
-			//System.out.printf("%s\t%010s\t%s\t%010s\t%010d\t010d", 
-			//		vo.getDate(), vo.getCompany(), vo.getcName(), vo.getpName(), vo.getInTotal(), vo.getOutTotal());
+			System.out.printf("%s\t%10s\t%s\t%10s\t%7d\t%7d\n", 
+					vo.getDate(), vo.getCompany(), vo.getcName(), vo.getpName(), vo.getInTotal(), vo.getOutTotal());
 			
-			System.out.print(vo.getDate() + "\t");
-			System.out.print(vo.getCompany() + "\t\t");
-			System.out.print(vo.getcName() + "\t");
-			System.out.print(vo.getpName() + "\t\t");
-			System.out.print(vo.getInTotal() + "\t\t");
-			System.out.print(vo.getOutTotal() + "\n");
+			//System.out.print(vo.getDate() + "\t");
+			//System.out.print(vo.getCompany() + "\t\t");
+			//System.out.print(vo.getcName() + "\t");
+			//System.out.print(vo.getpName() + "\t\t");
+			//System.out.print(vo.getInTotal() + "\t\t");
+			//System.out.print(vo.getOutTotal() + "\n");
 		}
 		
 	}

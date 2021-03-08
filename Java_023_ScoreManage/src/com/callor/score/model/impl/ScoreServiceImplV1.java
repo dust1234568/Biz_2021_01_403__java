@@ -149,7 +149,6 @@ public class ScoreServiceImplV1 implements ScoreService {
 				
 				sVO.add(nCount);
 			}
-
 			
 		}
 

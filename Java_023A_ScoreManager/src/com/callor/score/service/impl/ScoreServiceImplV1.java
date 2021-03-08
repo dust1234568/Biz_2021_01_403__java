@@ -1,5 +1,8 @@
 package com.callor.score.service.impl;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -22,10 +25,12 @@ import com.callor.score.values.Values;
  */
 public class ScoreServiceImplV1 implements ScoreService {
 
+	private String fileName;
 	private List<ScoreVO> scoreList; // 객체 선언
 
 	public ScoreServiceImplV1() {
 		scoreList = new ArrayList<ScoreVO>();
+		fileName = "src/com/callor/score/Score.txt";
 	}
 
 	@Override
@@ -39,6 +44,7 @@ public class ScoreServiceImplV1 implements ScoreService {
 	 */
 	@Override
 	public void makeScore() {
+		// TODO Random 성적표 생성
 
 		// makeScore()는 호출될때마다 20개씩 데이터를 생성하여 추가한다
 		// 이전에 저장된 데이터가 있더라도 계속 추가된다
@@ -96,8 +102,6 @@ public class ScoreServiceImplV1 implements ScoreService {
 	@Override
 	public void saveScoreToFile() {
 
-		String fileName = "src/com/callor/score/Score.txt";
-
 		// 객체 이름 명명
 		// 클래스 이름의 첫글자를 소문자로 하여 클래스 이름을 모두 사용한다 = 일반적인 방식
 		FileWriter fileWriter = null; // fw
@@ -128,9 +132,59 @@ public class ScoreServiceImplV1 implements ScoreService {
 
 	}
 
+	/*
+	 * 성적이 저장되어 있는 score.txt 파일을 읽어서 성적정보를 scoreList에 담기
+	 */
 	@Override
 	public void loadScoreFromFile() {
 
+		// main() method에서 반복하여 호출할경우 같은 값이 반복되어 호출되므로
+		// 기존에 저장되어 있던 리스트를 모두 제거하자
+		// scoreList = new ArrayList<ScoreVO>();
+		scoreList.removeAll(scoreList);
+
+		FileReader fileReader = null;
+		BufferedReader buffer = null;
+
+		try {
+			fileReader = new FileReader(fileName);
+			buffer = new BufferedReader(fileReader);
+
+			while (true) {
+
+				// 한줄씩 읽어오기
+				String reader = buffer.readLine();
+				// 파일을 다 읽었다면
+				if (reader == null) {
+					break;
+				}
+				// 읽어들인 문자열을 콜론(:)을 기준으로
+				// 잘라서 배열로 만들어 달라
+				// scores[] 배열에 담아라
+				String scores[] = reader.split(":");
+
+				// 필드 생성자를 호출하여 인스턴스 변수에 저장할 값을 전달하면서 동시에 객체를 초기화(생성)
+				ScoreVO vo = new ScoreVO(scores[0], // strNum
+						Integer.valueOf(scores[1]), // kor
+						Integer.valueOf(scores[2]), // eng
+						Integer.valueOf(scores[3]), // math
+						Integer.valueOf(scores[4]), // music
+						Integer.valueOf(scores[5]) // history
+				);
+				scoreList.add(vo);
+			}
+			buffer.close();
+			fileReader.close();
+
+		} catch (FileNotFoundException e) {
+			// TODO 파일이 없을때 exception
+			System.out.println(fileName + "파일이 없습니다");
+		} catch (IOException e) {
+			// TODO buffer 읽을때 exception
+			System.out.println("파일을 읽는동안 문제 발생");
+		}
+		// 파일 읽어들이고 바로 출력
+		this.printScore();
 	}
 
 	private void totalAndAvg() {
@@ -141,9 +195,9 @@ public class ScoreServiceImplV1 implements ScoreService {
 			sum += vo.getMath();
 			sum += vo.getMusic();
 			sum += vo.getHistory();
-			
+
 			float avg = (float) sum / 5;
-			
+
 			vo.setTotal(sum);
 			vo.setAvg(avg);
 
@@ -155,7 +209,7 @@ public class ScoreServiceImplV1 implements ScoreService {
 
 		// 출력하기 전에 총점 평균 계산
 		this.totalAndAvg();
-		
+
 		System.out.println(Values.dLine);
 		System.out.println("빛나라 고교 성적처리 시스템 2021");
 		System.out.println(Values.dLine);

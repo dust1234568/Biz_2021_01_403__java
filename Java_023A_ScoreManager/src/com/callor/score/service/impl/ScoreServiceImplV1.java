@@ -204,11 +204,58 @@ public class ScoreServiceImplV1 implements ScoreService {
 		}
 	}
 
+	// 순위 메기기
+	private void rankSet() {
+
+		// List를 내림차순 정렬
+		int nSize = scoreList.size();
+
+		for (int i = 0; i < nSize; i++) {
+
+			for (int j = i + 1; j < nSize; j++) {
+
+				if (scoreList.get(i).getTotal() < scoreList.get(j).getTotal()) {
+
+					ScoreVO tVO = scoreList.get(i);
+					scoreList.set(i, scoreList.get(j));
+					scoreList.set(j, tVO);
+				}
+
+			}
+		}
+		for (int i = 0; i < nSize; i++) {
+			ScoreVO vo = scoreList.get(i);
+			vo.setRank(i + 1);
+		}
+
+		// 학번순으로 정렬
+		for (int i = 0; i < nSize; i++) {
+
+			for (int j = i + 1; j < nSize; j++) {
+
+				int num1 = Integer.valueOf(scoreList.get(i).getStrNum()); // 변수 확인
+				int num2 = Integer.valueOf(scoreList.get(j).getStrNum());
+
+				if (num1 > num2) {
+
+					ScoreVO temp = scoreList.get(i);
+					scoreList.set(i, scoreList.get(j));
+					scoreList.set(j, temp);
+
+				}
+			}
+		}
+	}
+
 	@Override
 	public void printScore() {
 
 		// 출력하기 전에 총점 평균 계산
 		this.totalAndAvg();
+
+		// 출력전 순위 생성
+
+		this.rankSet();
 
 		System.out.println(Values.dLine);
 		System.out.println("빛나라 고교 성적처리 시스템 2021");

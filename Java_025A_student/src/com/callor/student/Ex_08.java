@@ -16,9 +16,11 @@ public class Ex_08 {
 		
 		for (int i = 0; i < nums.length; i++)  {
 			
-			nums[i] = new int();
+			nums[i] = i;
+			
+			System.out.println(nums[i]);
 		}
-
+		
 	}
 	
 }

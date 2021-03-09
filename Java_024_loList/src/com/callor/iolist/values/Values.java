@@ -8,8 +8,8 @@ public class Values {
 	
 	static {
 		
-		dLine = String.format("%090d", 0).replace("0", "=");
-		sLine = String.format("%090d", 0).replace("0", "-");
+		dLine = String.format("%0120d", 0).replace("0", "=");
+		sLine = String.format("%0120d", 0).replace("0", "-");
 	}
 	
 }

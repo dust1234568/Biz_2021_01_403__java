@@ -10,6 +10,7 @@ import java.util.List;
 import com.callor.iolist.model.IolistVO;
 import com.callor.iolist.service.IolistService;
 import com.callor.iolist.values.ValIolist;
+import com.callor.iolist.values.Values;
 
 public class IolistServiceImplV1 implements IolistService {
 
@@ -87,13 +88,75 @@ public class IolistServiceImplV1 implements IolistService {
 
 	@Override
 	public void ioListSum() {
-		// TODO Auto-generated method stub
+		// TODO 구분값에 따라 매입금액, 판매금액 계산하기
+
+		for (IolistVO vo : iolist) {
+
+			int iprice = 0;
+			int oprice = 0;
+			// 구분값을 inout 변수에 담고
+			int inout = vo.getInInout();
+			// 구분값에 따라 iprice 또는 oprice 만 계산하면
+			// 계산하지 않은 변수는 0으로 계속 유지
+			if (inout == 1) { // 구분이 매입일 경우
+				iprice = vo.getIoIprice() * vo.getIoQty();
+			} else if (inout == 2) {
+				oprice = vo.getInOprice() * vo.getIoQty();
+			}
+			// 매입금액, 판매금액을 vo에 담기
+			vo.setIoITotal(iprice);
+			vo.setInOTotal(oprice);
+			;
+
+		}
 
 	}
 
 	@Override
 	public void printIoList() {
-		// TODO Auto-generated method stub
+		// TODO 매입매출리스트 출력
+
+		System.out.println("** Loo9 매입매출 명세서 **");
+		System.out.println(Values.dLine(50));
+		System.out.println("거래일자\t거래처명\t상품명\t매입금액\t판매금액");
+		System.out.println(Values.sLine(50));
+
+		int nCount = 0;
+		int nITotal = 0;
+		int nOTotal = 0;
+
+		// int형 배열은 배열을 선언함과 동시에 각 요소가 0으로 초기화 된다
+		int arrTotal[] = new int[2];
+
+		for (IolistVO vo : iolist) {
+
+			System.out.print(vo.getIoDate() + "\t");
+			System.out.print(vo.getIoDept() + "\t");
+			System.out.print(vo.getIoPName() + "\t");
+			System.out.printf("%5d\t", vo.getIoITotal());
+			System.out.printf("%5d\n", vo.getInOTotal());
+
+			nCount++;
+			nITotal += vo.getIoITotal();
+			nOTotal += vo.getInOTotal();
+
+			// 배열에 값을 저장하는 방법
+			arrTotal[0] += vo.getIoITotal();
+			arrTotal[1] += vo.getInOTotal();
+
+		}
+		System.out.println(Values.sLine(50));
+
+		System.out.printf("합계 : %3d건\t\t%3d\t%3d\n", nCount, nITotal, nOTotal);
+		System.out.println(Values.dLine(50));
+
+		System.out.printf("합계 : %3d건\t\t", nCount);
+
+		for (int n : arrTotal) {
+
+			System.out.printf("%3d\t", n);
+		}
+		System.out.println();
 
 	}
 

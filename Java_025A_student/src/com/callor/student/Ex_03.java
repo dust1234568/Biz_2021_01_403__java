@@ -9,7 +9,8 @@ public class Ex_03 {
 
 			// ???
 			intSum += i + 1;
+
+			System.out.println("1 ~ 100 까지 덧셈한 결과 : " + intSum);
 		}
-		System.out.println("1 ~ 100 까지 덧셈한 결과 : " + intSum);
 	}
 }

@@ -19,6 +19,6 @@ public class Ex_09 {
 			stdList.add(stdVO);
 			System.out.println(stdList.get(i));
 		}
-		
+		System.out.println(stdList.get(0).getStName());
 	}
 }

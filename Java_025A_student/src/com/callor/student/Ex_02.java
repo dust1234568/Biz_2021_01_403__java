@@ -11,7 +11,7 @@ public class Ex_02 {
 		 */
 		Random rnd = new Random();
 
-		int num = rnd.nextInt(100) + 1;
+		int num = rnd.nextInt(101) + 1;
 
 		if (num % 2 == 0) {
 			System.out.println(num + "짝수");
